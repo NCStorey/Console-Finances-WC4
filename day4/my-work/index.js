@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -86,3 +86,64 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+// total number of months in data set
+
+let arraylength = finances.length
+
+console.log("total months " + arraylength)
+
+//total of profit and loss
+
+//create empty variable to hold sum figure
+let netSum=0
+
+//for loop iterating accross the array adding each item in turn
+for (let i =0; i < finances.length; i++) {netSum += finances[i][1]}
+
+//console log to display total
+console.log("total profit $" + netSum)
+
+
+//The average of the changes in Profit/Losses over the entire period.
+
+//creating an empty array to hold the difference between finance periods
+let difArray = [];
+
+//creating a variable to hold the number of differences in the finances variable for use in the for loop
+let changelength = finances.length - 1
+
+
+//for loop adjusted to the change length (length of initial array minus one), which is taking two indexs and finding the difference between them. The first interation will take indexs one (i+1) and minus index zero (i), the next iteration will take index two (i+2) and minus the first index (i+1). the differences are then pushed to a new array (difarray).
+
+for (let i =0; i < changelength; i++)
+
+{let dif = finances[i+1][1] - finances[i][1];difArray.push(dif)}
+
+//console.log of differences array as check for forloop working correctly - remove comment markers when needed
+// console.log(difArray)
+
+//empty varible for the sum of the differences worked out using the previous forloop (difSum)
+
+
+let difSum =0
+
+
+//for loop adding the items in the difArray.
+
+for (let i =0; i < difArray.length; i++) {difSum += difArray[i]}
+
+console.log(difSum)
+
+//average of the differences (average calculated using the mean)(difAv) 
+
+let difAvg = difSum/changelength
+
+//logging the difference average to two decimal places
+
+console.log(difAvg.toFixed(2))
+
+//greatest profit
+
+
+//greatest loss
