@@ -149,8 +149,22 @@ let profitHigh = Math.max(...difArray);
 
 console.log(profitHigh)
 
+let indexProfitHigh = difArray.indexOf(profitHigh)
+console.log("index of the highest profit in difArray = " + indexProfitHigh)
+
+//
+indexProfitHigh += 1
+console.log("index of the highest profit in finance Array = " + indexProfitHigh)
+
+
+console.log(finances[indexProfitHigh][0].concat(" $") + (finances[indexProfitHigh][1]))
+
+
 //greatest loss
 
 let lossHigh = Math.min(...difArray);
 
 console.log(lossHigh)
+
+
+
