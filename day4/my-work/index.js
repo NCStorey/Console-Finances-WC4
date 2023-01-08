@@ -143,7 +143,14 @@ let difAvg = difSum/changelength
 
 console.log(difAvg.toFixed(2))
 
-//greatest profit
+//greatest profit using math max on the diffArray. "..." used to deconstruct array into varialbles
 
+let profitHigh = Math.max(...difArray);
+
+console.log(profitHigh)
 
 //greatest loss
+
+let lossHigh = Math.min(...difArray);
+
+console.log(lossHigh)
