@@ -87,84 +87,79 @@ let finances = [
   ['Feb-2017', 671099],
 ];
 
-// total number of months in data set
+// first task - display total number of months in data set
+
+  //creation of variable to store the array length. Array length found by using .length function
 
 let arraylength = finances.length
 
-console.log("total months " + arraylength)
+//second task - total of profit and loss
 
-//total of profit and loss
-
-//create empty variable to hold sum figure
+  //An empty variable to hold total figure
 let netSum=0
 
-//for loop iterating accross the array adding each item in turn
+  //for loop iterating accross the array adding each item to the netSum figure in turn
 for (let i =0; i < finances.length; i++) {netSum += finances[i][1]}
 
-//console log to display total
-console.log("total profit $" + netSum)
+//Third task - The average of the changes in Profit/Losses over the entire period.
 
-
-//The average of the changes in Profit/Losses over the entire period.
-
-//creating an empty array to hold the difference between finance periods
+  //An empty array to hold the difference between finance periods
 let difArray = [];
 
-//creating a variable to hold the number of differences in the finances variable for use in the for loop
+  //A variable to hold the number of differences in the finances array, variable for use in the for loop
 let changelength = finances.length - 1
 
 
-//for loop adjusted to the change length (length of initial array minus one), which is taking two indexs and finding the difference between them. The first interation will take indexs one (i+1) and minus index zero (i), the next iteration will take index two (i+2) and minus the first index (i+1). the differences are then pushed to a new array (difarray).
+  //for loop adjusted to the change length. Loop is taking two indexs and finding the difference. The first interation will take indexs [1] (i+1) and minus index [0] (i), the next iteration will take index [2] (i+2) and minus index [1] (i+1). The differences are then pushed to a new array (difarray).
 
 for (let i =0; i < changelength; i++)
 
 {let dif = finances[i+1][1] - finances[i][1];difArray.push(dif)}
 
-//console.log of differences array as check for forloop working correctly - remove comment markers when needed
-// console.log(difArray)
-
-//empty varible for the sum of the differences worked out using the previous forloop (difSum)
-
+  //empty varible for the sum of the differences worked out using the previous forloop (difSum)
 
 let difSum =0
 
-
-//for loop adding the items in the difArray.
+  //for loop fining the sum of the difArray.
 
 for (let i =0; i < difArray.length; i++) {difSum += difArray[i]}
 
-console.log(difSum)
-
-//average of the differences (average calculated using the mean)(difAv) 
+  //average of the differences (average calculated using the mean)(difAv) 
 
 let difAvg = difSum/changelength
 
-//logging the difference average to two decimal places
 
-console.log(difAvg.toFixed(2))
+//Forth task - month and year of greatest increase in profit and corresponding profit figure 
 
-//greatest profit using math max on the diffArray. "..." used to deconstruct array into varialbles
+  //using math max on the difArray. "..." used to deconstruct array into varialbles
+  //gives the highest value in the difArray 
 
 let profitHigh = Math.max(...difArray);
 
-console.log(profitHigh)
+  //variable to store the index of the index of the highest value in the difArray
+
 
 let indexProfitHigh = difArray.indexOf(profitHigh)
-console.log("index of the highest profit in difArray = " + indexProfitHigh)
 
-//
+  //the index of that value can then be used to find the corresponding entry in the finances array but needs to be increased by one
+
 indexProfitHigh += 1
-console.log("index of the highest profit in finance Array = " + indexProfitHigh)
 
 
-console.log(finances[indexProfitHigh][0].concat(" $") + (finances[indexProfitHigh][1]))
-
-
-//greatest loss
+//final task - month and year of greatest loss in profit and corresponding loss figure 
+  // logic and coding much the same as the above task  
 
 let lossHigh = Math.min(...difArray);
 
-console.log(lossHigh)
+let indexLossHigh = difArray.indexOf(lossHigh)
 
+indexLossHigh += 1
 
+//console log of task results
 
+console.log("Financial Analysis - Weekly challenge 4\n______________________________________")
+console.log("Total Months : " + arraylength)
+console.log("Total : $" + netSum)
+console.log("Average Change : $" + difAvg.toFixed(2)) //tofixed use to return two decimal places
+console.log("Greatest Increase in Profits : " + finances[indexProfitHigh][0].concat(" $") + (finances[indexProfitHigh][1])) //concat used to pull both items from the finances array and string them together
+console.log("Greatest Decrease in Profits : " + finances[indexLossHigh][0].concat(" $") + (finances[indexLossHigh][1]))
