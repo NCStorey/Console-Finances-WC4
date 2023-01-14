@@ -14,6 +14,8 @@ The main purpose of the exercise was to how the use of variable creation, forloo
 
 The exersise was designed to replicate a real life scenario of a company asking you to perform data manipulation that will update with the array (future proofing).
 
+Link to live site: https://ncstorey.github.io/Console-Finances-WC4/
+
 ## Installation
 
 The repo is made up of a HTML and JS Script file. Please use the dev tools in browser inorder to see the console logs.
