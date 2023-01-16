@@ -161,5 +161,5 @@ console.log("Financial Analysis - Weekly challenge 4\n__________________________
 console.log("Total Months : " + arraylength)
 console.log("Total : $" + netSum)
 console.log("Average Change : $" + difAvg.toFixed(2)) //tofixed use to return two decimal places
-console.log("Greatest Increase in Profits : " + finances[indexProfitHigh][0].concat(" $") + (profitHigh)) //concat used to pull both items from the finances array and string them together
+console.log("Greatest Increase in Profits : " + finances[indexProfitHigh][0].concat(" $") + (profitHigh)) //concat used to pull items from the arrays and string them together
 console.log("Greatest Decrease in Profits : " + finances[indexLossHigh][0].concat(" $") + (lossHigh))
